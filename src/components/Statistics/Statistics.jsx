@@ -6,7 +6,6 @@ export const Statistics = ({title, stats}) => {
         {title && (
             <h2>{title}</h2>
         )}
-
     <StatList>{
         stats.map(({ id, label, percentage }) =>
         <li key={id}>
