@@ -1,33 +1,33 @@
-import css from 'components/Profile/Profile.module.css';
+import { ProfileThumb, DescriptionWrapper, StatsWrapper } from './ProfileStyled'
 import PropTypes from "prop-types";
 
 export const Profile = ({ avatar, username, tag, location, stats: {followers, views, likes} }) => {
-    return (<div className={css.profile}>
-        <div className="description">
+    return (<ProfileThumb>
+        <DescriptionWrapper>
             <img
                 src={avatar}
                 alt={username}
-                className="avatar"
+                
             />
-            <p className="name">{username}</p>
-            <p className="tag">@{tag}</p>
-            <p className="location">{location}</p>
-        </div>
-        <ul className="stats">
+            <p>{username}</p>
+            <p>@{tag}</p>
+            <p>{location}</p>
+        </DescriptionWrapper>
+        <StatsWrapper>
     <li>
-      <span className="label">Followers</span>
-      <span className="quantity">{followers}</span>
+      <span>Followers</span>
+      <span>{followers}</span>
     </li>
     <li>
-      <span className="label">Views</span>
-      <span className="quantity">{views}</span>
+      <span>Views</span>
+      <span>{views}</span>
     </li>
     <li>
-      <span className="label">Likes</span>
-      <span className="quantity">{likes}</span>
+      <span>Likes</span>
+      <span>{likes}</span>
     </li>
-  </ul>
-    </div>)
+  </StatsWrapper>
+    </ProfileThumb>)
 }
 
 Profile.propTypes = {
