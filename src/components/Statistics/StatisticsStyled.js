@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const StatisticsThumb = styled.section`
   width: fit-content;
   margin: 30px auto;
-  border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   & h2 {
