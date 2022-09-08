@@ -1,19 +1,20 @@
+import { StatisticsThumb, StatList } from './StatisticsStyled';
 import PropTypes from "prop-types";
 
 export const Statistics = ({title, stats}) => {
-    return (<section className="statistics">
+    return (<StatisticsThumb>
         {title && (
-            <h2 className="title">{title}</h2>
+            <h2>{title}</h2>
         )}
 
-    <ul className="stat-list">{
+    <StatList>{
         stats.map(({ id, label, percentage }) =>
-        <li className="item" key={id}>
-            <span className="label">{label}</span>
-            <span className="percentage">{percentage}</span>
+        <li key={id}>
+            <span>{label}</span>
+            <span>{percentage} %</span>
         </li>)}
-    </ul>
-</section>)
+    </StatList>
+</StatisticsThumb>)
 }
 
 Statistics.propTypes = {
